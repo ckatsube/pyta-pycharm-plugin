@@ -20,7 +20,7 @@ object ScanUtil {
      * */
     @Throws(IOException::class)
     fun scan(pytaPath: String, filePath: String): String {
-        val builder = ProcessBuilder(pytaPath, filePath, "--output-format", "python_ta.reporters.JSONReporter")
+        val builder = ProcessBuilder(pytaPath, "-m", "python_ta", filePath, "--output-format", "python_ta.reporters.JSONReporter")
         var p: Process? = null
         try {
             p = builder.start()
